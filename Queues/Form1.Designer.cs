@@ -104,14 +104,20 @@ namespace Queues
             this.CurrentDate.TabIndex = 8;
             this.CurrentDate.Text = "Current date";
             // 
+            // TimeManager
+            // 
+            this.TimeManager.Enabled = true;
+            this.TimeManager.Interval = 1000;
+            this.TimeManager.Tick += new System.EventHandler(this.TimeManager_Tick);
+            // 
             // TextCurrentDate
             // 
             this.TextCurrentDate.AutoSize = true;
             this.TextCurrentDate.Location = new System.Drawing.Point(90, 90);
             this.TextCurrentDate.Name = "TextCurrentDate";
-            this.TextCurrentDate.Size = new System.Drawing.Size(64, 13);
+            this.TextCurrentDate.Size = new System.Drawing.Size(84, 13);
             this.TextCurrentDate.TabIndex = 9;
-            this.TextCurrentDate.Text = "placeHolder";
+            this.TextCurrentDate.Text = "timePlaceHolder";
             // 
             // StartQueue
             // 

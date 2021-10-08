@@ -16,5 +16,13 @@ namespace Queues
         {
             InitializeComponent();
         }
+
+        int timer_tick = 10000; // 10 seconds
+        private void TimeManager_Tick(object sender, EventArgs e)
+        {
+            TimeManager.Interval = timer_tick;
+
+            TextCurrentDate.Text = DateTime.Today.ToString() + DateTime.Now.Hour.ToString(); 
+        }
     }
 }
