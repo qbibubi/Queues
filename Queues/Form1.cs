@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Queues
 {
-    public partial class Form1 : Form
+    public partial class Appointments : Form
     {
-        public Form1()
+        public Appointments()
         {
             InitializeComponent();
         }
