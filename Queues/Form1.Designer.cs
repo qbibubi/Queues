@@ -71,9 +71,10 @@ namespace Queues
             // 
             // AppointmentDatePicker
             // 
+            this.AppointmentDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.AppointmentDatePicker.Location = new System.Drawing.Point(90, 62);
             this.AppointmentDatePicker.Name = "AppointmentDatePicker";
-            this.AppointmentDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.AppointmentDatePicker.Size = new System.Drawing.Size(100, 20);
             this.AppointmentDatePicker.TabIndex = 6;
             // 
             // PatientName
