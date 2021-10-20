@@ -44,6 +44,8 @@ namespace Queues
             this.AddToQueue = new System.Windows.Forms.Button();
             this.RemoveFromQueue = new System.Windows.Forms.Button();
             this.InsertIntoQueue = new System.Windows.Forms.Button();
+            this.TextCurrentHour = new System.Windows.Forms.Label();
+            this.Blinker = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // AppointmentDate
@@ -115,9 +117,9 @@ namespace Queues
             this.TextCurrentDate.AutoSize = true;
             this.TextCurrentDate.Location = new System.Drawing.Point(90, 90);
             this.TextCurrentDate.Name = "TextCurrentDate";
-            this.TextCurrentDate.Size = new System.Drawing.Size(84, 13);
+            this.TextCurrentDate.Size = new System.Drawing.Size(80, 13);
             this.TextCurrentDate.TabIndex = 9;
-            this.TextCurrentDate.Text = "timePlaceHolder";
+            this.TextCurrentDate.Text = "timeDateHolder";
             // 
             // StartQueue
             // 
@@ -127,6 +129,7 @@ namespace Queues
             this.StartQueue.TabIndex = 10;
             this.StartQueue.Text = "Start queue";
             this.StartQueue.UseVisualStyleBackColor = true;
+            this.StartQueue.Click += new System.EventHandler(this.StartQueue_Click);
             // 
             // StopQueue
             // 
@@ -136,6 +139,7 @@ namespace Queues
             this.StopQueue.TabIndex = 11;
             this.StopQueue.Text = "Stop queue";
             this.StopQueue.UseVisualStyleBackColor = true;
+            this.StopQueue.Click += new System.EventHandler(this.StopQueue_Click);
             // 
             // AddToQueue
             // 
@@ -145,6 +149,7 @@ namespace Queues
             this.AddToQueue.TabIndex = 12;
             this.AddToQueue.Text = "Add to queue";
             this.AddToQueue.UseVisualStyleBackColor = true;
+            this.AddToQueue.Click += new System.EventHandler(this.AddToQueue_Click);
             // 
             // RemoveFromQueue
             // 
@@ -154,6 +159,7 @@ namespace Queues
             this.RemoveFromQueue.TabIndex = 13;
             this.RemoveFromQueue.Text = "Rem. from queue";
             this.RemoveFromQueue.UseVisualStyleBackColor = true;
+            this.RemoveFromQueue.Click += new System.EventHandler(this.RemoveFromQueue_Click);
             // 
             // InsertIntoQueue
             // 
@@ -163,12 +169,27 @@ namespace Queues
             this.InsertIntoQueue.TabIndex = 14;
             this.InsertIntoQueue.Text = "Insert into queue";
             this.InsertIntoQueue.UseVisualStyleBackColor = true;
+            this.InsertIntoQueue.Click += new System.EventHandler(this.InsertIntoQueue_Click);
+            // 
+            // TextCurrentHour
+            // 
+            this.TextCurrentHour.AutoSize = true;
+            this.TextCurrentHour.Location = new System.Drawing.Point(176, 90);
+            this.TextCurrentHour.Name = "TextCurrentHour";
+            this.TextCurrentHour.Size = new System.Drawing.Size(107, 13);
+            this.TextCurrentHour.TabIndex = 15;
+            this.TextCurrentHour.Text = "timeHourPlaceHolder";
+            // 
+            // Blinker
+            // 
+            this.Blinker.Tick += new System.EventHandler(this.Blinker_Tick);
             // 
             // Appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 311);
+            this.ClientSize = new System.Drawing.Size(424, 117);
+            this.Controls.Add(this.TextCurrentHour);
             this.Controls.Add(this.InsertIntoQueue);
             this.Controls.Add(this.RemoveFromQueue);
             this.Controls.Add(this.AddToQueue);
@@ -205,6 +226,8 @@ namespace Queues
         private System.Windows.Forms.Button AddToQueue;
         private System.Windows.Forms.Button RemoveFromQueue;
         private System.Windows.Forms.Button InsertIntoQueue;
+        private System.Windows.Forms.Label TextCurrentHour;
+        private System.Windows.Forms.Timer Blinker;
     }
 }
 
