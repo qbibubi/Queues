@@ -14,8 +14,15 @@ namespace Queues
     {
         struct Patient
         {
-            public string patient_name, patient_appointment;
-            public DateTime patient_appointment_date;
+            private string patient_name, patient_appointment;
+            private DateTime patient_appointment_date;
+
+            public void GetValues(string p_name, string p_appointment, DateTime p_app_date)
+            {
+                patient_name = p_name;
+                patient_appointment = p_appointment;
+                patient_appointment_date = p_app_date;
+            }
         }
 
         public Appointments()
@@ -60,7 +67,7 @@ namespace Queues
 
         }
 
-        private void AddToQueue_Click( object sender, EventArgs e )
+        private void Enqueue_Click( object sender, EventArgs e )
         {
             if (!CheckPatientInfo())
             {
@@ -76,7 +83,5 @@ namespace Queues
         {
 
         }
-
-        
     }
 }

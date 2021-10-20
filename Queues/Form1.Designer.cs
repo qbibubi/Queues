@@ -39,7 +39,7 @@ namespace Queues
             this.CurrentDate = new System.Windows.Forms.Label();
             this.TimeManager = new System.Windows.Forms.Timer(this.components);
             this.TextCurrentDate = new System.Windows.Forms.Label();
-            this.StartQueue = new System.Windows.Forms.Button();
+            this.Enqueue = new System.Windows.Forms.Button();
             this.StopQueue = new System.Windows.Forms.Button();
             this.AddToQueue = new System.Windows.Forms.Button();
             this.RemoveFromQueue = new System.Windows.Forms.Button();
@@ -121,15 +121,15 @@ namespace Queues
             this.TextCurrentDate.TabIndex = 9;
             this.TextCurrentDate.Text = "timeDateHolder";
             // 
-            // StartQueue
+            // Enqueue
             // 
-            this.StartQueue.Location = new System.Drawing.Point(200, 7);
-            this.StartQueue.Name = "StartQueue";
-            this.StartQueue.Size = new System.Drawing.Size(100, 20);
-            this.StartQueue.TabIndex = 10;
-            this.StartQueue.Text = "Start queue";
-            this.StartQueue.UseVisualStyleBackColor = true;
-            this.StartQueue.Click += new System.EventHandler(this.StartQueue_Click);
+            this.Enqueue.Location = new System.Drawing.Point(200, 7);
+            this.Enqueue.Name = "Enqueue";
+            this.Enqueue.Size = new System.Drawing.Size(100, 20);
+            this.Enqueue.TabIndex = 10;
+            this.Enqueue.Text = "Start queue";
+            this.Enqueue.UseVisualStyleBackColor = true;
+            this.Enqueue.Click += new System.EventHandler(this.StartQueue_Click);
             // 
             // StopQueue
             // 
@@ -149,7 +149,7 @@ namespace Queues
             this.AddToQueue.TabIndex = 12;
             this.AddToQueue.Text = "Add to queue";
             this.AddToQueue.UseVisualStyleBackColor = true;
-            this.AddToQueue.Click += new System.EventHandler(this.AddToQueue_Click);
+            this.AddToQueue.Click += new System.EventHandler(this.Enqueue_Click);
             // 
             // RemoveFromQueue
             // 
@@ -194,7 +194,7 @@ namespace Queues
             this.Controls.Add(this.RemoveFromQueue);
             this.Controls.Add(this.AddToQueue);
             this.Controls.Add(this.StopQueue);
-            this.Controls.Add(this.StartQueue);
+            this.Controls.Add(this.Enqueue);
             this.Controls.Add(this.TextCurrentDate);
             this.Controls.Add(this.CurrentDate);
             this.Controls.Add(this.PatientName);
@@ -221,7 +221,7 @@ namespace Queues
         private System.Windows.Forms.Label CurrentDate;
         private System.Windows.Forms.Timer TimeManager;
         private System.Windows.Forms.Label TextCurrentDate;
-        private System.Windows.Forms.Button StartQueue;
+        private System.Windows.Forms.Button Enqueue;
         private System.Windows.Forms.Button StopQueue;
         private System.Windows.Forms.Button AddToQueue;
         private System.Windows.Forms.Button RemoveFromQueue;
