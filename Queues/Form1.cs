@@ -12,24 +12,20 @@ namespace Queues
 {
     public partial class Appointments : Form
     {
-        struct Patient
+        public struct Patient
         {
-            private string patient_name, patient_appointment;
-            private DateTime patient_appointment_date;
-
-            public void GetValues(string p_name, string p_appointment, DateTime p_app_date)
+            public Patient(string p_name, string p_app, DateTime p_app_date)
             {
                 patient_name = p_name;
-                patient_appointment = p_appointment;
-                patient_appointment_date = p_app_date;
+                patient_appointment = p_app;
+                patient_appointment_date = p_app_date;      
             }
+
+            private string patient_name, patient_appointment;
+            private DateTime patient_appointment_date;
         }
                 
         Patient[] patients = new Patient[3];
-
-        Patient patient_rear = new Patient();
-        Patient patient_current = new Patient();
-        Patient patient_last = new Patient();
 
         public Appointments()
         {
@@ -55,16 +51,10 @@ namespace Queues
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
 
-        private void Blinker_Tick( object sender, EventArgs e )
-        {
-            /* code */
-        }
-
         private void StartQueue_Click( object sender, EventArgs e )
         {
             if (!CheckPatientInfo())
             {
-                Blinker.Start();
             }
         }
 

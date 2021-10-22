@@ -45,7 +45,6 @@ namespace Queues
             this.RemoveFromQueue = new System.Windows.Forms.Button();
             this.InsertIntoQueue = new System.Windows.Forms.Button();
             this.TextCurrentHour = new System.Windows.Forms.Label();
-            this.Blinker = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // AppointmentDate
@@ -180,10 +179,6 @@ namespace Queues
             this.TextCurrentHour.TabIndex = 15;
             this.TextCurrentHour.Text = "timeHourPlaceHolder";
             // 
-            // Blinker
-            // 
-            this.Blinker.Tick += new System.EventHandler(this.Blinker_Tick);
-            // 
             // Appointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +222,6 @@ namespace Queues
         private System.Windows.Forms.Button RemoveFromQueue;
         private System.Windows.Forms.Button InsertIntoQueue;
         private System.Windows.Forms.Label TextCurrentHour;
-        private System.Windows.Forms.Timer Blinker;
     }
 }
 
