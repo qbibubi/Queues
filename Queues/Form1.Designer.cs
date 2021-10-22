@@ -126,9 +126,8 @@ namespace Queues
             this.Enqueue.Name = "Enqueue";
             this.Enqueue.Size = new System.Drawing.Size(100, 20);
             this.Enqueue.TabIndex = 10;
-            this.Enqueue.Text = "Start queue";
+            this.Enqueue.Text = "Enqueue";
             this.Enqueue.UseVisualStyleBackColor = true;
-            this.Enqueue.Click += new System.EventHandler(this.StartQueue_Click);
             // 
             // StopQueue
             // 
@@ -136,9 +135,8 @@ namespace Queues
             this.StopQueue.Name = "StopQueue";
             this.StopQueue.Size = new System.Drawing.Size(100, 20);
             this.StopQueue.TabIndex = 11;
-            this.StopQueue.Text = "Stop queue";
+            this.StopQueue.Text = "Dequeue";
             this.StopQueue.UseVisualStyleBackColor = true;
-            this.StopQueue.Click += new System.EventHandler(this.StopQueue_Click);
             // 
             // AddToQueue
             // 
@@ -200,6 +198,7 @@ namespace Queues
             this.Controls.Add(this.AppointmentDate);
             this.Name = "Appointments";
             this.Text = "Appointments";
+            this.Load += new System.EventHandler(this.Appointments_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

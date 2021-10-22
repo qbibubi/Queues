@@ -26,14 +26,21 @@ namespace Queues
         }
                 
         Patient[] patients = new Patient[3];
+        
 
         public Appointments()
         {
             InitializeComponent();
+        }
 
-            // on init so the strings are instantly changed to current hour
+        private void Appointments_Load(object sender, EventArgs e)
+        {
             TextCurrentDate.Text = DateTime.Today.ToString("dd-MM-yyyy");
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+
+            patients[0] = new Patient();
+            patients[1] = new Patient();
+            patients[2] = new Patient();
         }
 
         public bool CheckPatientInfo()
@@ -51,22 +58,10 @@ namespace Queues
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
 
-        private void StartQueue_Click( object sender, EventArgs e )
-        {
-            if (!CheckPatientInfo())
-            {
-            }
-        }
-
-        private void StopQueue_Click( object sender, EventArgs e )
-        {
-
-        }
-
         private void Enqueue_Click( object sender, EventArgs e )
         {
             if (!CheckPatientInfo())
-            {
+            {   
             }
         }
 
@@ -78,6 +73,6 @@ namespace Queues
         private void InsertIntoQueue_Click( object sender, EventArgs e )
         {
 
-        }
+        }       
     }
 }
