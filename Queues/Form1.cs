@@ -24,6 +24,12 @@ namespace Queues
                 patient_appointment_date = p_app_date;
             }
         }
+                
+        Patient[] patients = new Patient[3];
+
+        Patient patient_rear = new Patient();
+        Patient patient_current = new Patient();
+        Patient patient_last = new Patient();
 
         public Appointments()
         {
