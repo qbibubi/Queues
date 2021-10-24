@@ -44,6 +44,6 @@ namespace Queues
         private void InsertIntoQueue_Click(object sender, EventArgs e)
         {
 
-        }
+        }       
     }
 }
