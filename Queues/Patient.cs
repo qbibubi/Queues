@@ -17,7 +17,7 @@ namespace Queues
             next = null;
         }
 
-        public void SetNext(Patient e) { next = e; }
+        public void SetNext(Patient p) { next = p; }
         public Patient GetNext() { return next; }
         public int GetValue() { return val; }
 

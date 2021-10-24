@@ -12,12 +12,6 @@ namespace Queues
         Patient qptr, qcnt;
         private int n;          // number of elements in the array
 
-        public Queue(int new_n)
-        {
-            n = new_n;
-            qptr = qcnt = null;
-        }
-
         // Check if the queue is empty
         public bool Empty() { return qcnt != null; }
 
@@ -26,7 +20,7 @@ namespace Queues
         public int Front()
         {
             if (qcnt != null) return qptr.GetValue();
-            else return 0;     // special value string
+            else return 0;     // special value int
         }
 
         // Assign new value to the queue if there's space

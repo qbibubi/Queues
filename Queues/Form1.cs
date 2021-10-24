@@ -56,6 +56,7 @@ namespace Queues
         }
 
         Queue queue = new Queue(3);     // Max sizeof is 3
+
         private void Enqueue_Click(object sender, EventArgs e)
         {
             InputError();
