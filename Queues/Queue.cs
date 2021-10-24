@@ -29,7 +29,7 @@ namespace Queues
         public string Front()
         {
             if (qcnt != 0) return Q[qptr];
-            else return "";
+            else return "";     // special value string
         }
 
         // Assign new value to the queue if there's space
