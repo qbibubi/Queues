@@ -21,7 +21,7 @@ namespace Queues
         {
             // on load the placeholder texts are instantly changed to current hour and date
             TextCurrentDate.Text = DateTime.Today.ToString("dd-MM-yyyy");
-            if (DateTime.Now.Minute > 0)
+            if (DateTime.Now.Minute < 10)
                 TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + "0" + DateTime.Now.Minute.ToString();
             else TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
@@ -30,53 +30,45 @@ namespace Queues
         private void TimeManager_Tick(object sender, EventArgs e)
         {
             TimeManager.Interval = timer_tick;
-            if (DateTime.Now.Minute > 0)
+            if (DateTime.Now.Minute < 10)
                 TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + "0" + DateTime.Now.Minute.ToString();
             else TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
 
         public bool CheckInfo()
         {
-            string title = "Error!";
-            string name_err_message = "No patient name!";
-            string appointment_err_message = "No appointment!";
-            string date_err_message = "Wrong date!";
-
-            if (NameTextBox.ToString() != "")
+            if ((NameTextBox.ToString() == "") ||
+                (AppointmentNameTextBox.ToString() == "") ||
+                (AppointmentDatePicker.Value < DateTime.Today))
             {
-                MessageBox.Show(name_err_message, title);
-                return false;
+                return true;
             }
-            else return true;
-
-            if (AppointmentNameTextBox.ToString() != "")
-            {
-                MessageBox.Show(appointment_err_message, title);
-                return false;
-            }
-            else return true;
-
-            if (AppointmentDatePicker.Value < DateTime.Today)
-            {
-                MessageBox.Show(date_err_message, title);
-                return false;
-            }
-            else return true;
+            else return false;
         }
 
+        public void InputError()
+        {
+            string title = "Error!";
+            string err_mess = "You missed an input!";
+
+            if (!CheckInfo())
+                MessageBox.Show(err_mess, title);
+        }
+
+        Queue queue = new Queue(3);     // Max sizeof is 3
         private void Enqueue_Click(object sender, EventArgs e)
         {
-
+            InputError();
         }
 
         private void Dequeue_Click(object sender, EventArgs e)
         {
-
+            InputError();
         }
 
         private void InsertIntoQueue_Click(object sender, EventArgs e)
         {
-
-        }       
+            InputError();
+        }
     }
 }
