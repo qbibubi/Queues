@@ -37,13 +37,13 @@ namespace Queues
 
         public bool CheckInfo()
         {
-            if ((NameTextBox.ToString() == "") ||
-                (AppointmentNameTextBox.ToString() == "") ||
+            if ((NameTextBox.Text == "") ||
+                (AppointmentNameTextBox.Text == "") ||
                 (AppointmentDatePicker.Value < DateTime.Today))
             {
                 return true;
             }
-            else return false;
+            return false;
         }
 
         public void InputError()
@@ -51,7 +51,7 @@ namespace Queues
             string title = "Error!";
             string err_mess = "You missed an input!";
 
-            if (!CheckInfo())
+            if (CheckInfo())
                 MessageBox.Show(err_mess, title);
         }
 
