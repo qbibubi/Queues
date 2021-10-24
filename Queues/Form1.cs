@@ -12,9 +12,9 @@ namespace Queues
 {
     public partial class Appointments : Form
     {
-        private void Appointments_Load( object sender, EventArgs e )
+        private void Appointments_Load(object sender, EventArgs e)
         {
-            // on init so the strings are instantly changed to current hour
+            // on load the placeholder texts are instantly changed to current hour and date
             TextCurrentDate.Text = DateTime.Today.ToString("dd-MM-yyyy");
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
@@ -24,8 +24,8 @@ namespace Queues
             InitializeComponent();
         }
 
-        private readonly int timer_tick = 10000; // 10s
-        private void TimeManager_Tick( object sender, EventArgs e )
+        private readonly int timer_tick = 10000;    // 10s
+        private void TimeManager_Tick(object sender, EventArgs e)
         {
             TimeManager.Interval = timer_tick;
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
