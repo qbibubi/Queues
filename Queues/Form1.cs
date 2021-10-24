@@ -12,34 +12,16 @@ namespace Queues
 {
     public partial class Appointments : Form
     {
-        struct Patient
+        private void Appointments_Load( object sender, EventArgs e )
         {
-            private string patient_name, patient_appointment;
-            private DateTime patient_appointment_date;
-
-            public void GetValues(string p_name, string p_appointment, DateTime p_app_date)
-            {
-                patient_name = p_name;
-                patient_appointment = p_appointment;
-                patient_appointment_date = p_app_date;
-            }
-        }
-
-        public Appointments()
-        {
-            InitializeComponent();
-
             // on init so the strings are instantly changed to current hour
             TextCurrentDate.Text = DateTime.Today.ToString("dd-MM-yyyy");
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
 
-        public bool CheckPatientInfo()
+        public Appointments()
         {
-            if ( !(NameTextBox.Text == "" || AppointmentNameTextBox.Text == "") )
-                return true;
-
-            return false;
+            InitializeComponent();
         }
 
         private readonly int timer_tick = 10000; // 10s
@@ -49,37 +31,17 @@ namespace Queues
             TextCurrentHour.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
         }
 
-        private void Blinker_Tick( object sender, EventArgs e )
-        {
-            /* code */
-        }
-
-        private void StartQueue_Click( object sender, EventArgs e )
-        {
-            if (!CheckPatientInfo())
-            {
-                Blinker.Start();
-            }
-        }
-
-        private void StopQueue_Click( object sender, EventArgs e )
+        private void Enqueue_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Enqueue_Click( object sender, EventArgs e )
-        {
-            if (!CheckPatientInfo())
-            {
-            }
-        }
-
-        private void RemoveFromQueue_Click( object sender, EventArgs e )
+        private void Dequeue_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void InsertIntoQueue_Click( object sender, EventArgs e )
+        private void InsertIntoQueue_Click(object sender, EventArgs e)
         {
 
         }
