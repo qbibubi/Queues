@@ -15,11 +15,8 @@ namespace Queues
         public string GetPatientAppointment()       { return patient_appointment; }
         public string GetPatientName()              { return patient_name; }
 
-        public void SetValues(string p_name, string p_appointment, DateTime p_app_date)
-        {
-            patient_name = p_name;
-            patient_appointment = p_appointment;
-            patient_appointment_date = p_app_date;
-        }
+        public void SetPatientAppointmentDate(DateTime new_date)          { patient_appointment_date = new_date; }
+        public void SetPatientAppointment(string new_patient_appointment) { patient_appointment = new_patient_appointment; }
+        public void SetPatientName(string new_patient_name)               { patient_name = new_patient_name; }
     }
 }
