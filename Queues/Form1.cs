@@ -59,16 +59,43 @@ namespace Queues
         private void Enqueue_Click(object sender, EventArgs e)
         {
             InputError();
+
+            if (queue.Empty())
+            {
+                return;
+            }
+            else
+            {
+
+            }
         }
 
         private void Dequeue_Click(object sender, EventArgs e)
         {
             InputError();
+
+            if (queue.Empty())
+            {
+                return;
+            }
+            else
+            {
+
+            }
         }
 
         private void InsertIntoQueue_Click(object sender, EventArgs e)
         {
             InputError();
+
+            if (queue.Empty())
+            {
+                return;
+            }
+            else
+            {
+
+            }
         }
     }
 }

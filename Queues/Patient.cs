@@ -8,6 +8,19 @@ namespace Queues
 {
     class Patient
     {
+        private int val;
+        private Patient next;
+
+        public Patient(int new_x)
+        {
+            val = new_x;
+            next = null;
+        }
+
+        public void SetNext(Patient e) { next = e; }
+        public Patient GetNext() { return next; }
+        public int GetValue() { return val; }
+
         private string patient_name, patient_appointment;
         private DateTime patient_appointment_date;
 

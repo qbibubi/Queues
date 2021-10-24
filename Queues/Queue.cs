@@ -9,51 +9,52 @@ namespace Queues
 {
     class Queue
     {
-        private string[] Q;     // array in which the queue will be created
-        private int qptr;       // index of the element which is the beginning of the queue
-        private int qcnt;       // number of elements which queue stores
+        Patient qptr, qcnt;
         private int n;          // number of elements in the array
 
         public Queue(int new_n)
         {
-            Q = new string[new_n];
             n = new_n;
-            qptr = qcnt = 0;
+            qptr = qcnt = null;
         }
 
         // Check if the queue is empty
-        public bool Empty() { return qcnt != 0; }
+        public bool Empty() { return qcnt != null; }
 
         // Returns value of the element at the beggining
         // of the queue or special value if the queue is empty
-        public string Front()
+        public int Front()
         {
-            if (qcnt != 0) return Q[qptr];
-            else return "";     // special value string
+            if (qcnt != null) return qptr.GetValue();
+            else return 0;     // special value string
         }
 
         // Assign new value to the queue if there's space
         // Otherwise the queue is unmutable
-        public void Push(string v)
+        public void Push(int n)
         {
-            int i;  // index
+            Patient temp = new Patient(n);
 
-            if (qcnt < n)
+            if (qcnt == null)
+                qcnt = qptr = null;
+            else
             {
-                i = qptr + qcnt++;
-                if (i >= n) i -= n;
-                Q[i] = v;
+                qptr.SetNext(temp);
+                qptr = temp;
             }
         }
 
         // Queue is decreased by removal of the first element
         public void Pop()
         {
-            if (qcnt != 0)
+            if (qcnt != null)
             {
-                qcnt--; qptr++;
-                if (qptr == n) qptr = 0;
+                if (qcnt.GetNext() == null)
+                    qptr = null;
+
+                qcnt = qcnt.GetNext();
             }
+            else return;
         }
     }
 }
